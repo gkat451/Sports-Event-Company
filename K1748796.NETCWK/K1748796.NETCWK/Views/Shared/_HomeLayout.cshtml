@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" asp-action="index" asp-controller="home">
+                <img src="~/images/foot.png" height="30" width="30" />
+
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a asp-action="about" asp-controller="home" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-action="list" asp-controller="home" class="nav-link">Admin</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            @RenderBody()
+        </div>
+        @if (IsSectionDefined("Scripts"))
+        {
+            @RenderSection("Scripts", required: true)
+        }
+    </div>
+</body>
+</html>
